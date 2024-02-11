@@ -1,6 +1,7 @@
 package Company.Entities;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Seller extends Employee{
@@ -11,10 +12,11 @@ public class Seller extends Employee{
 
     public Seller(String name, LocalDate sinceDate) {
         super(name, Role.SELLER, sinceDate);
-
+        this.sales = new ArrayList<>();
     }
 
-    public void addSale(Sale sale) {
+    public void addSale(Seller seller, LocalDate saleDate, double value) {
+        Sale sale = new Sale(this, saleDate, value);
         sales.add(sale);
     }
 
