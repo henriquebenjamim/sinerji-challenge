@@ -30,6 +30,13 @@ public class Seller extends Employee{
     }
 
     @Override
+    public double calculateBonus(int month, int year) {
+        double totalSalesInMonth = calculateTotalSalesInMonth(month, year);
+        double bonus = totalSalesInMonth * bonusPercentageBySale;
+        return bonus;
+    }
+
+    @Override
     public double baseSalary(int month, int year) {
         int yearsWorking = year - getSinceDate().getYear();
         double salary = baseSalary + (raisePerYear * yearsWorking);

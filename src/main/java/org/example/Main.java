@@ -36,5 +36,8 @@ public class Main {
 
         double totalSalaryPaid = Payroll.calculateTotalSalaryPaid(employees, month, year);
         System.out.println("Total pago somente em salários no mês " + month + "/" + year + ": R$" + totalSalaryPaid);
+
+        double totalBenefitsPaid = Payroll.calculateTotalBenefitsPaid(employees, month, year);
+        System.out.println("Total pago em benefícios no mês " + month + "/" + year + ": R$" + totalBenefitsPaid);
     }
 }

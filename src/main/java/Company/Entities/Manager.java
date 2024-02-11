@@ -6,6 +6,7 @@ public class Manager extends Employee{
     private static final double baseSalary = 20000.0;
     private static final double raisePerYear = 3000.0;
 
+
     public Manager(String name, LocalDate sinceDate) {
         super(name, Role.MANAGER, sinceDate);
     }
@@ -24,5 +25,8 @@ public class Manager extends Employee{
         return salary;
     }
 
-
+    @Override
+    public double calculateBonus(int month, int year) {
+        return 0;
+    }
 }

@@ -30,4 +30,15 @@ public class Payroll {
         }
         return totalSalaryPaid;
     }
+
+    //Um método que receba uma lista somente com os funcionários que recebem benefícios, mês e ano e retorne o total pago em benefícios no mês.
+    public static double calculateTotalBenefitsPaid(List<Employee> employees, int month, int year) {
+        double totalBenefitsPaid = 0.0;
+        for (Employee employee : employees) {
+            if (employee.getRole() != Role.MANAGER) {
+                totalBenefitsPaid += employee.calculateBonus(month, year);
+            }
+        }
+        return totalBenefitsPaid;
+    }
 }
