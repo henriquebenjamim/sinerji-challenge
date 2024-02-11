@@ -1,6 +1,5 @@
 package Company.Entities;
 
-import javax.management.relation.Role;
 import java.time.LocalDate;
 
 public abstract class Employee {
