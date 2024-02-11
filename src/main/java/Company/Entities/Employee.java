@@ -26,4 +26,5 @@ public abstract class Employee {
     }
 
     public abstract double calculateTotalSalary(int month, int year);
+    public abstract double baseSalary(int month, int year);
 }

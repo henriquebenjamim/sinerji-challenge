@@ -1,5 +1,5 @@
 package Company.Entities;
 
-enum Role {
+public enum Role {
     MANAGER, SECRETARY, SELLER
 }

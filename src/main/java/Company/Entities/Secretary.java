@@ -17,4 +17,11 @@ public class Secretary extends Employee{
         double bonus = salary * bonusPercentage;
         return salary + bonus;
     }
+
+    @Override
+    public double baseSalary(int month, int year) {
+        int yearsWorking = year - getSinceDate().getYear();
+        double salary = baseSalary + (1000 * yearsWorking);
+        return salary;
+    }
 }

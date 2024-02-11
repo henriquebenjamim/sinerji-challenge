@@ -16,4 +16,13 @@ public class Manager extends Employee{
         double salary = baseSalary + (raisePerYear * yearsWorking);
         return salary;
     }
+
+    @Override
+    public double baseSalary(int month, int year) {
+        int yearsWorking = year - getSinceDate().getYear();
+        double salary = baseSalary + (raisePerYear * yearsWorking);
+        return salary;
+    }
+
+
 }

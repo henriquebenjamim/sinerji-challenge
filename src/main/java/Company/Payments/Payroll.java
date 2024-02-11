@@ -1,12 +1,14 @@
 package Company.Payments;
 
 import Company.Entities.Employee;
+import Company.Entities.Role;
 import Company.Entities.Seller;
 
 import java.util.List;
 
 public class Payroll {
 
+    // Um método que receba uma lista de funcionários, mês e ano e retorne o valor total pago (salário e benefício) a esses funcionários no mês.
     public static double calculateTotalValuePaid(List<Employee> employees, int month, int year) {
         double totalValuePaid = 0.0;
         for (Employee employee : employees) {
@@ -18,5 +20,14 @@ public class Payroll {
             }
         }
         return totalValuePaid;
+    }
+
+    //Um método que receba uma lista de funcionários, mês e ano e retorne o total pago somente em salários no mês.
+    public static double calculateTotalSalaryPaid(List<Employee> employees, int month, int year) {
+        double totalSalaryPaid = 0.0;
+        for (Employee employee : employees) {
+            totalSalaryPaid += employee.baseSalary(month, year);
+        }
+        return totalSalaryPaid;
     }
 }

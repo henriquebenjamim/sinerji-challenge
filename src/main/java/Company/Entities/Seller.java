@@ -29,10 +29,19 @@ public class Seller extends Employee{
         return salary + bonus;
     }
 
+    @Override
+    public double baseSalary(int month, int year) {
+        int yearsWorking = year - getSinceDate().getYear();
+        double salary = baseSalary + (raisePerYear * yearsWorking);
+        return salary;
+    }
+
     private double calculateTotalSalesInMonth(int month, int year) {
         return sales.stream()
                 .filter(sale -> sale.getDate().getYear() == year && sale.getDate().getMonthValue() == month)
                 .mapToDouble(Sale::getValue)
                 .sum();
     }
+
+
 }
