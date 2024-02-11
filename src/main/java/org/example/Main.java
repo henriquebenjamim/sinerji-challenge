@@ -11,27 +11,35 @@ public class Main {
     public static void main(String[] args) {
 
         Manager juliana = new Manager("Juliana Alves", LocalDate.of(2017, 7, 1));
-        Seller juca = new Seller("Julio Carvalho", LocalDate.of(2021, 12, 1));
+        Manager bento = new Manager("Bento Albino", LocalDate.of(2014, 3, 1));
+
+        Seller joao = new Seller("João Mendes", LocalDate.of(2021, 12, 1));
         Seller ana = new Seller("Ana Silva", LocalDate.of(2021, 12, 1));
 
+        Secretary maria = new Secretary("Maria Souza", LocalDate.of(2015, 12, 1));
         Secretary jorge = new Secretary("Jorge Carvalho", LocalDate.of(2018, 1, 1));
 
 
         ana.addSale(ana, LocalDate.of(2021, 12, 1), 5200.0);
         ana.addSale(ana, LocalDate.of(2022, 1, 1), 4000.0);
-        juca.addSale(juca, LocalDate.of(2022, 2, 1), 5200.0);
         ana.addSale(ana, LocalDate.of(2022, 2, 1), 4200.0);
-
         ana.addSale(ana, LocalDate.of(2022, 3, 1), 5850.0);
         ana.addSale(ana, LocalDate.of(2022, 4, 1), 7000.0);
+
+        joao.addSale(joao, LocalDate.of(2021, 12, 1), 3400);
+        joao.addSale(joao, LocalDate.of(2022, 1, 1), 7700);
+        joao.addSale(joao, LocalDate.of(2022, 2, 1), 5000);
+        joao.addSale(joao, LocalDate.of(2022, 3, 1), 5900);
+        joao.addSale(joao, LocalDate.of(2022, 4, 1), 6500);
 
 
         List<Employee> employees = new ArrayList<>();
         employees.add(juliana);
+        employees.add(bento);
+        employees.add(joao);
         employees.add(ana);
+        employees.add(maria);
         employees.add(jorge);
-        employees.add(juca);
-
 
         int month = 2;
         int year = 2022;
