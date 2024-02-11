@@ -58,4 +58,23 @@ public class Payroll {
         }
         return highestEarner;
     }
+
+    /* Um método que receba uma lista somente com os funcionários que recebem
+    benefícios, mês e ano e retorne o nome do funcionário que recebeu o valor mais
+    alto em benefícios no mês. */
+
+    public static String findEmployeeWithHighestBenefits(List<Employee> employees, int month, int year) {
+        Employee highestBeneficiary = null;
+        double maxBenefits = 0.0;
+        for (Employee employee : employees) {
+            if (employee.getRole() != Role.MANAGER) {
+                double benefits = employee.calculateBonus(month, year);
+                if (benefits > maxBenefits) {
+                    maxBenefits = benefits;
+                    highestBeneficiary = employee;
+                }
+            }
+        }
+        return highestBeneficiary != null ? highestBeneficiary.getName() : "";
+    }
 }

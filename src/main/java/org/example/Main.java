@@ -43,5 +43,9 @@ public class Main {
         Employee highestEarner = Payroll.findEmployeeWithHighestEarnings(employees, month, year);
         System.out.println("Funcionário que recebeu o valor mais alto no mês " + month + "/" + year + ": " + highestEarner.getName()
                 + " -> R$ " + highestEarner.calculateTotalSalary(month, year));
+
+        String highestBeneficiary = Payroll.findEmployeeWithHighestBenefits(employees, month, year);
+        System.out.println("Nome do funcionário que recebeu o valor mais alto em benefícios no mês "
+                + month + "/" + year + ": " + highestBeneficiary );
     }
 }
