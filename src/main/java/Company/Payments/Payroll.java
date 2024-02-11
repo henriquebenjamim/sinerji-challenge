@@ -77,4 +77,21 @@ public class Payroll {
         }
         return highestBeneficiary != null ? highestBeneficiary.getName() : "";
     }
+
+    /* Um método que receba uma lista de vendedores, mês e ano e retorne o que mais
+    vendeu no mês. */
+    public static Seller findBestSeller(List<Employee> employees, int month, int year) {
+        Seller bestSeller = null;
+        double maxSales = 0.0;
+        for (Employee employee : employees) {
+            if (employee.getRole() == Role.SELLER) {
+                double salesInMonth = ((Seller) employee).calculateTotalSalesInMonth(month, year);
+                if (salesInMonth > maxSales) {
+                    maxSales = salesInMonth;
+                    bestSeller = (Seller) employee;
+                }
+            }
+        }
+        return bestSeller;
+    }
 }

@@ -11,13 +11,17 @@ public class Main {
     public static void main(String[] args) {
 
         Manager juliana = new Manager("Juliana Alves", LocalDate.of(2017, 7, 1));
+        Seller juca = new Seller("Julio Carvalho", LocalDate.of(2021, 12, 1));
         Seller ana = new Seller("Ana Silva", LocalDate.of(2021, 12, 1));
+
         Secretary jorge = new Secretary("Jorge Carvalho", LocalDate.of(2018, 1, 1));
 
 
         ana.addSale(ana, LocalDate.of(2021, 12, 1), 5200.0);
         ana.addSale(ana, LocalDate.of(2022, 1, 1), 4000.0);
+        juca.addSale(juca, LocalDate.of(2022, 2, 1), 5200.0);
         ana.addSale(ana, LocalDate.of(2022, 2, 1), 4200.0);
+
         ana.addSale(ana, LocalDate.of(2022, 3, 1), 5850.0);
         ana.addSale(ana, LocalDate.of(2022, 4, 1), 7000.0);
 
@@ -26,6 +30,7 @@ public class Main {
         employees.add(juliana);
         employees.add(ana);
         employees.add(jorge);
+        employees.add(juca);
 
 
         int month = 2;
@@ -47,5 +52,8 @@ public class Main {
         String highestBeneficiary = Payroll.findEmployeeWithHighestBenefits(employees, month, year);
         System.out.println("Nome do funcionário que recebeu o valor mais alto em benefícios no mês "
                 + month + "/" + year + ": " + highestBeneficiary );
+
+        Seller bestSeller = Payroll.findBestSeller(employees, month, year);
+        System.out.println("Vendedor que mais vendeu no mês " + month + "/" + year + ": " + bestSeller.getName());
     }
 }

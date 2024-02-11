@@ -43,7 +43,7 @@ public class Seller extends Employee{
         return salary;
     }
 
-    private double calculateTotalSalesInMonth(int month, int year) {
+    public double calculateTotalSalesInMonth(int month, int year) {
         return sales.stream()
                 .filter(sale -> sale.getDate().getYear() == year && sale.getDate().getMonthValue() == month)
                 .mapToDouble(Sale::getValue)
