@@ -32,3 +32,5 @@ O projeto está estruturado da seguinte forma:
 - Conectar a um banco de dados
 - Containerização da aplicação
 - Deploy
+
+[Link to English Version](https://github.com/henriquebenjamim/sinerji-challenge/blob/main/README-en.md)
