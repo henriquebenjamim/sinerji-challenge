@@ -8,7 +8,8 @@ import java.util.List;
 
 public class Payroll {
 
-    // Um método que receba uma lista de funcionários, mês e ano e retorne o valor total pago (salário e benefício) a esses funcionários no mês.
+    // Um método que receba uma lista de funcionários, mês e ano e retorne
+    // o valor total pago (salário e benefício) a esses funcionários no mês.
     public static double calculateTotalValuePaid(List<Employee> employees, int month, int year) {
         double totalValuePaid = 0.0;
         for (Employee employee : employees) {
@@ -31,7 +32,8 @@ public class Payroll {
         return totalSalaryPaid;
     }
 
-    //Um método que receba uma lista somente com os funcionários que recebem benefícios, mês e ano e retorne o total pago em benefícios no mês.
+    //Um método que receba uma lista somente com os funcionários que recebem benefícios, mês e ano
+    // e retorne o total pago em benefícios no mês.
     public static double calculateTotalBenefitsPaid(List<Employee> employees, int month, int year) {
         double totalBenefitsPaid = 0.0;
         for (Employee employee : employees) {
@@ -40,5 +42,20 @@ public class Payroll {
             }
         }
         return totalBenefitsPaid;
+    }
+
+    //Um método que receba uma lista de funcionários, mês e ano e retorne o que
+    //recebeu o valor mais alto no mês.
+    public static Employee findEmployeeWithHighestEarnings(List<Employee> employees, int month, int year) {
+        Employee highestEarner = null;
+        double maxEarnings = 0.0;
+        for (Employee employee : employees) {
+            double earnings = employee.calculateTotalSalary(month, year);
+            if (earnings > maxEarnings) {
+                maxEarnings = earnings;
+                highestEarner = employee;
+            }
+        }
+        return highestEarner;
     }
 }

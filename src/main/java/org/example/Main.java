@@ -39,5 +39,9 @@ public class Main {
 
         double totalBenefitsPaid = Payroll.calculateTotalBenefitsPaid(employees, month, year);
         System.out.println("Total pago em benefícios no mês " + month + "/" + year + ": R$" + totalBenefitsPaid);
+
+        Employee highestEarner = Payroll.findEmployeeWithHighestEarnings(employees, month, year);
+        System.out.println("Funcionário que recebeu o valor mais alto no mês " + month + "/" + year + ": " + highestEarner.getName()
+                + " -> R$ " + highestEarner.calculateTotalSalary(month, year));
     }
 }
